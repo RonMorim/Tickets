@@ -6,13 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NewEventActivity extends AppCompatActivity {
 
@@ -66,6 +68,21 @@ public class NewEventActivity extends AppCompatActivity {
                         priceNumber, sellerFirstName.getText().toString(),
                         sellerLastName.getText().toString(), sellerEmail.getText().toString(),
                         sellerPhoneNumber.getText().toString());
+
+                Map<String, Object> newEventRecord = new HashMap<>();
+                newEventRecord.put("name", newEvent.getName());
+                newEventRecord.put("date", newEvent.getDate().toString());
+                newEventRecord.put("time", newEvent.getTime().toString());
+                newEventRecord.put("location", newEvent.getLocation());
+                newEventRecord.put("price", String.valueOf(newEvent.getPrice()));
+                newEventRecord.put("sellerFirstName", newEvent.getSellerFirstName());
+                newEventRecord.put("sellerLastName", newEvent.getSellerLastName());
+                newEventRecord.put("sellerEmail", newEvent.getSellerEmail());
+                newEventRecord.put("sellerLastName", newEvent.getSellerLastName());
+                newEventRecord.put("sellerPhoneNumber", newEvent.getSellerPhoneNumber());
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                db.collection("events").document(String.valueOf(System.currentTimeMillis()))
+                        .set(newEventRecord);
 
                 Intent result = new Intent();
                 result.putExtra("Event", newEvent);

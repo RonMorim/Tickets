@@ -1,13 +1,10 @@
 package com.example.tickets;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -30,7 +27,7 @@ public class SellerAdapter extends RecyclerView.Adapter<SellerViewHolder> {
             return false;
         }
         for (Seller seller : Sellers) {
-            if(event.getSellerFirstName() == seller.getFirstName() && event.getSellerLastName() == seller.getLastName()){
+            if(event.getSellerFirstName().equals(seller.getFirstName()) && event.getSellerLastName().equals(seller.getLastName())){
                 return true;
             }
         }

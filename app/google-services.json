@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "518865383713",
+    "project_id": "nights-tickets",
+    "storage_bucket": "nights-tickets.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518865383713:android:48a587a3f54402750ace60",
+        "android_client_info": {
+          "package_name": "com.example.tickets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518865383713-lupde30lmdun10derf8t8h1rimfc1b3o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tickets",
+            "certificate_hash": "8e56ab3b2cea27effe6819a5051cbf024e353035"
+          }
+        },
+        {
+          "client_id": "518865383713-f1tqllltgpp2bp2h4amf1rmk5kaq1pn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2XZueIb6DrLob7yoshOFAHs0xSy1j-30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518865383713-f1tqllltgpp2bp2h4amf1rmk5kaq1pn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
